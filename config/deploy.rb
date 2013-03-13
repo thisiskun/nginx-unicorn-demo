@@ -8,6 +8,11 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
+# RVM
+require 'rvm/capistrano'
+set :rvm_ruby_string, "ruby-2.0.0-p0"
+set :rvm_type, :user
+
 set :scm, "git"
 set :repository, "git@github.com:thisiskun/#{application}.git"
 set :branch, "master"
